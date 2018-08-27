@@ -3,13 +3,13 @@ class UsersController < ApplicationController
 
   def homepage
   end
-  
+
   def new
     @user = User.new
   end
 
   def create
-    
+
       @user = User.new(user_params)
       if @user
         @user.save
@@ -29,9 +29,10 @@ class UsersController < ApplicationController
   end
 
 private
-
+  def validate_password_confirmation
     if params[:user][:password] !== params[:user][:password_confirmation]
     redirect_to '/signup'
+  end
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)

@@ -6,12 +6,11 @@ class UsersController < ApplicationController
 
   def create
     binding.pry
-    if params[:user][:password] == params[:user][:password_confirmation]
+    #if params[:user][:password] == params[:user][:password_confirmation]
       @user = User.create(user_params)
       if @user
         session[:user_id] = @user.id
         redirect_to '/'
-      end
     else
       redirect_to signup_path
     end

@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
 private
   def validate_password_confirmation
-    if params[:user][:password] !== params[:user][:password_confirmation]
+    if params[:user][:password] != params[:user][:password_confirmation]
     redirect_to '/signup'
   end
 

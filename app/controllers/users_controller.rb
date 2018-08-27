@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       if @user
         session[:user_id] = @user.id
-        redirect_to users_path(@user)
+        redirect_to '/'(@user)
       end
     else
       redirect_to signup_path

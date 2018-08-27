@@ -1,7 +1,7 @@
 require 'pry'
 class UsersController < ApplicationController
 
-  before_action :validate_password_confirmation, only: :create
+  # before_action :validate_password_confirmation, only: :create
 
   def homepage
   end

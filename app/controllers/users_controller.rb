@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     #if params[:user][:password] == params[:user][:password_confirmation]
       @user = User.new(user_params)
       if @user
+        @user.save
         session[:user_id] = @user.id
         redirect_to '/'
     else

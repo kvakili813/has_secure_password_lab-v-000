@@ -35,6 +35,7 @@ private
     if params[:user][:password] != params[:user][:password_confirmation]
     redirect_to '/signup'
   end
+  end
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)

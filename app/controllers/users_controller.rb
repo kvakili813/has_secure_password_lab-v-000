@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     if params[:user][:password] == params[:user][:password_confirmation]
       @user = User.create(user_params)
       if @user

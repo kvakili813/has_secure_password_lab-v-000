@@ -1,4 +1,4 @@
-<%= form_for :user, url: '/signup' do |f| %>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
   Name: <%= f.text_field :name %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
